@@ -33,8 +33,16 @@ export class UserService {
 
   constructor() {  }
 
-  addUser() {
-    this.userList.push();
+  addUser(act: string, uPwd: string, uMail: string, ads: string, nickname: string) {
+    this.userList.push(
+      {
+        account: act,
+        pwd: uPwd,
+        mail: uMail,
+        address: ads,
+        name: nickname
+      }
+    );
   }
 
   getUser(): User[] {

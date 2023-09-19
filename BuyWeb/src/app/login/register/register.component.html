@@ -1,11 +1,11 @@
 <p>register works!</p>
 <form [formGroup]="register" action="">
-  <label for="account">帳號</label><input  id="account" type="text"><br>
-  <label for="password">密碼</label><input id="password" type="text"><br>
-  <label for="repwd">確認密碼</label><input id="repwd" type="text"><br>
-  <label for="email">mail</label><input id="email" type="text"><br>
-  <label for="address">地址</label><input id="address" type="text"><br>
-  <label for="nickName">暱稱</label><input id="nickName" type="text"><br>
-  <button>註冊</button>
+  <label for="account">帳號</label><input formControlName="account" id="account" type="text"><br>
+  <label for="password">密碼</label><input formControlName="password" id="password" type="password"><br>
+  <label for="repwd">確認密碼</label><input formControlName="repwd" id="repwd" type="password"><br>
+  <label for="email">mail</label><input formControlName="email" id="email" type="text"><br>
+  <label for="address">地址</label><input formControlName="address" id="address" type="text"><br>
+  <label for="nickname">暱稱</label><input formControlName="nickname" id="nickName" type="text"><br>
+  <button [disabled]="register.invalid" (click)="regiUser()" routerLink="/login">註冊</button>
 </form>
 <button routerLink="/">返回</button>
