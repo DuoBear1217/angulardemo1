@@ -1,5 +1,6 @@
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   loginform!: FormGroup ;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private logService: UserService) {}
 
   ngOnInit(): void {
     this.loginform = this.formBuilder.group({
@@ -47,6 +48,6 @@ export class LoginComponent {
   }
 
   login() {
-    console.log(this.loginform.value);
+    this.logService.setLog(this.loginform.value.account, this.loginform.value.password);
   }
 }

@@ -1,1 +1,8 @@
-<p>member-center works!</p>
+<h3>員工列表</h3>
+<div *ngFor="let user of nowLogin">
+  <p>{{ user.name }}</p>
+  <p>信箱: {{ user.mail }}</p>
+  <p>地址: {{ user.address }}</p>
+</div>
+
+

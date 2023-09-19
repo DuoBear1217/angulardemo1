@@ -7,13 +7,15 @@ import { MemberCenterComponent } from './login/member-center/member-center.compo
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductListComponent } from './product/product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MemberCenterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
