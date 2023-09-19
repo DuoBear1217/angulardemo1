@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import { MemberCenterComponent } from './login/member-center/member-center.component';
 import { AuthGuard } from './login/auth.guard';
+import { LoginMatchGuard } from './login/login-match.guard';
+import { ErrorComponent } from './login/error/error.component';
 
 const routes: Routes = [
   {
@@ -21,8 +23,13 @@ const routes: Routes = [
   {
     path: 'membercenter',
     component: MemberCenterComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    canMatch: [LoginMatchGuard]
   },
+  {
+    path: '**',
+    component: ErrorComponent
+  }
 ];
 
 @NgModule({

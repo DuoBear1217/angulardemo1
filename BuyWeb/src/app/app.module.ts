@@ -12,9 +12,12 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 
 // 額外引用Modules
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 // AG-Grid
 import { AgGridModule } from 'ag-grid-angular';
+import { ErrorComponent } from './login/error/error.component';
+import { ProductsListComponent } from './product/products-list/products-list.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +25,17 @@ import { AgGridModule } from 'ag-grid-angular';
     MemberCenterComponent,
     LoginComponent,
     RegisterComponent,
-    ProductListComponent
+    ProductListComponent,
+    ErrorComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AgGridModule
+    AgGridModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
