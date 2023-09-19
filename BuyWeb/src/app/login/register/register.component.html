@@ -6,6 +6,6 @@
   <label for="email">mail</label><input formControlName="email" id="email" type="text"><br>
   <label for="address">地址</label><input formControlName="address" id="address" type="text"><br>
   <label for="nickname">暱稱</label><input formControlName="nickname" id="nickName" type="text"><br>
-  <button [disabled]="register.invalid" (click)="regiUser()" routerLink="/login">註冊</button>
+  <button mat-raised-button color="warn" [disabled]="register.invalid" (click)="regiUser()" routerLink="/login">註冊</button>
 </form>
-<button routerLink="/">返回</button>
+<button mat-raised-button color="primary" routerLink="/">返回</button>

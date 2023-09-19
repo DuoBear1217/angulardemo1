@@ -50,4 +50,9 @@ export class LoginComponent {
   login() {
     this.logService.setLog(this.loginform.value.account, this.loginform.value.password);
   }
+
+  // testBind: any = {
+  //   backgroundColor: 'black',
+  //   color: 'green'
+  // }
 }
