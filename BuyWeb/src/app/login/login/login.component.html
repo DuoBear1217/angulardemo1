@@ -1,11 +1,16 @@
-<p>login works!</p>
 <div>
   <form [formGroup]="loginform" action="">
-    <label for="account">帳號</label><input id="account" formControlName="account" type="text"><br>
-    <label for="password">密碼</label><input id="password" formControlName="password" type="password"><br>
-    <button mat-raised-button color="primary" [disabled]="loginform.invalid" (click)="login()" routerLink="/membercenter">登入</button>
+    <mat-form-field>
+      <mat-label for="account">帳號</mat-label>
+      <input matInput id="account" formControlName="account" type="text">
+    </mat-form-field><br>
+    <mat-form-field>
+      <mat-label for="password">密碼</mat-label>
+      <input matInput id="password" formControlName="password" type="password">
+    </mat-form-field><br>
+    <button mat-raised-button color="primary"
+    [disabled]="loginform.invalid" (click)="login()" routerLink="/membercenter">
+    登入</button>
   </form>
   <button mat-raised-button color="warn" routerLink="/register">註冊</button>
 </div>
-
-<!-- <h1 [style]="testBind">測試文字</h1> -->

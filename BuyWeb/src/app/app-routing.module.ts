@@ -6,6 +6,8 @@ import { MemberCenterComponent } from './login/member-center/member-center.compo
 import { AuthGuard } from './login/auth.guard';
 import { LoginMatchGuard } from './login/login-match.guard';
 import { ErrorComponent } from './login/error/error.component';
+import { AuthOutGuard } from './login/auth-out.guard';
+import { TestDeactivateGuard } from './testRouteGuard/test-deactivate.guard';
 
 const routes: Routes = [
   {
@@ -14,16 +16,17 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    // canDeactivate: [TestDeactivateGuard]
   },
   {
     path: 'membercenter',
     component: MemberCenterComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     canMatch: [LoginMatchGuard]
   },
   {

@@ -1,11 +1,29 @@
-<p>register works!</p>
 <form [formGroup]="register" action="">
-  <label for="account">帳號</label><input formControlName="account" id="account" type="text"><br>
-  <label for="password">密碼</label><input formControlName="password" id="password" type="password"><br>
-  <label for="repwd">確認密碼</label><input formControlName="repwd" id="repwd" type="password"><br>
-  <label for="email">mail</label><input formControlName="email" id="email" type="text"><br>
-  <label for="address">地址</label><input formControlName="address" id="address" type="text"><br>
-  <label for="nickname">暱稱</label><input formControlName="nickname" id="nickName" type="text"><br>
-  <button mat-raised-button color="warn" [disabled]="register.invalid" (click)="regiUser()" routerLink="/login">註冊</button>
+  <mat-form-field>
+    <label for="account">帳號</label>
+    <input matInput formControlName="account" id="account" type="text">
+  </mat-form-field><br>
+  <mat-form-field>
+    <label for="password">密碼</label>
+    <input matInput formControlName="password" id="password" type="password">
+  </mat-form-field><br>
+  <mat-form-field>
+    <label for="repwd">確認密碼</label>
+    <input matInput formControlName="repwd" id="repwd" type="password">
+  </mat-form-field><br>
+  <mat-form-field>
+    <label for="email">mail</label>
+    <input matInput formControlName="email" id="email" type="text">
+  </mat-form-field><br>
+  <mat-form-field>
+    <label for="address">地址</label>
+    <input matInput formControlName="address" id="address" type="text">
+  </mat-form-field><br>
+  <mat-form-field>
+    <label for="nickname">暱稱</label>
+    <input matInput formControlName="nickname" id="nickName" type="text">
+  </mat-form-field><br>
+  <button mat-raised-button color="primary" [disabled]="register.invalid"
+  (click)="regiUser()" routerLink="/login">註冊</button>
 </form>
-<button mat-raised-button color="primary" routerLink="/">返回</button>
+<button mat-raised-button color="warn" routerLink="/">返回</button>

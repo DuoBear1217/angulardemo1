@@ -20,9 +20,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 // AG-Grid
 import { AgGridModule } from 'ag-grid-angular';
+import { CheckPwdDirective } from './login/check-pwd.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { AgGridModule } from 'ag-grid-angular';
     RegisterComponent,
     ProductListComponent,
     ErrorComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    CheckPwdDirective
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,10 @@ import { AgGridModule } from 'ag-grid-angular';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

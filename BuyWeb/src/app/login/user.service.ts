@@ -49,6 +49,11 @@ export class UserService {
     return this.userList;
   }
 
+  resetUser() {
+    this.logAccount = '';
+    this.logPassword = '';
+  }
+
   setLog(act: string, pwd: string) {
     this.logAccount = act;
     this.logPassword = pwd;
@@ -57,7 +62,27 @@ export class UserService {
   checkUser(): boolean {
     let logFlag = false;
     this.userList.forEach(element => {
-      if(this.logAccount === element.account && this.logPassword === element.pwd) {
+      if((this.logAccount === element.account &&
+        this.logPassword === element.pwd) ||
+        this.checkToken()) {
+        logFlag = true;
+      }
+    })
+    return logFlag;
+  }
+
+  setToken() {
+    document.cookie = 'loginFlag=qwejhfrlkasi123dpsl6;path=/';
+  }
+
+  delToken() {
+    document.cookie = "loginFlag=;expire=Thu, 18 Dec 2000 12:00:00 GMT;";
+  }
+
+  checkToken(): boolean {
+    let logFlag = false;
+    document.cookie.split(';').forEach(element => {
+      if (element == 'loginFlag=qwejhfrlkasi123dpsl6') {
         logFlag = true;
       }
     })
