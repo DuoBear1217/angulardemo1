@@ -1,0 +1,8 @@
+{
+  "name" : "口袋背圖字長T",
+  "price" : 700,
+  "color" : "黑",
+  "size" : "X",
+  "materiel": "棉",
+  "stock" : 5
+}

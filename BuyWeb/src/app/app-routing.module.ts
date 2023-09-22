@@ -8,6 +8,8 @@ import { LoginMatchGuard } from './login/login-match.guard';
 import { ErrorComponent } from './login/error/error.component';
 import { AuthOutGuard } from './login/auth-out.guard';
 import { TestDeactivateGuard } from './testRouteGuard/test-deactivate.guard';
+import { MemberComponent } from './member/member/member.component';
+import { ProductsListComponent } from './product/products-list/products-list.component';
 
 const routes: Routes = [
   {
@@ -26,13 +28,23 @@ const routes: Routes = [
   {
     path: 'membercenter',
     component: MemberCenterComponent,
-    // canActivate: [AuthGuard],
-    canMatch: [LoginMatchGuard]
+    canActivate: [AuthGuard],
+    // canMatch: [LoginMatchGuard],
+    children: [
+      {
+        path: 'member',
+        component: MemberComponent
+      },
+      {
+        path: 'product',
+        loadChildren: () => import('./product/products-list/products-list.module').then((e) => e.ProductsListModule)
+      }
+    ]
   },
-  {
-    path: '**',
-    component: ErrorComponent
-  }
+  // {
+    // path: '**',
+    // component: ErrorComponent
+  // }
 ];
 
 @NgModule({

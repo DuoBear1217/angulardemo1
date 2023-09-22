@@ -8,13 +8,13 @@ import { AppComponent } from './app.component';
 import { MemberCenterComponent } from './login/member-center/member-center.component';
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
 import { ErrorComponent } from './login/error/error.component';
 import { ProductsListComponent } from './product/products-list/products-list.component';
 
 // 額外引用Modules
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { CheckPwdDirective } from './login/check-pwd.directive';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +26,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 // AG-Grid
 import { AgGridModule } from 'ag-grid-angular';
-import { CheckPwdDirective } from './login/check-pwd.directive';
+import { MemberComponent } from './member/member/member.component';
+import { ProdcutDetailsComponent } from './product/prodcut-details/prodcut-details.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +35,11 @@ import { CheckPwdDirective } from './login/check-pwd.directive';
     MemberCenterComponent,
     LoginComponent,
     RegisterComponent,
-    ProductListComponent,
     ErrorComponent,
     ProductsListComponent,
-    CheckPwdDirective
+    CheckPwdDirective,
+    MemberComponent,
+    ProdcutDetailsComponent
   ],
   imports: [
     BrowserModule,
